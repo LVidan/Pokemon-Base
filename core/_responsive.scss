@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+  .crd {
+
+    &__hdg {
+      left: -5px;
+    }
+
+    &:hover {
+
+      .crd__hdg {
+        left: -8px;
+      }
+    }
+  }
+}

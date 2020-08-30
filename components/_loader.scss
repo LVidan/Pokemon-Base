@@ -1,0 +1,22 @@
+.loader {
+  width: 100%;
+  height: calc(100vh - 58px - 80px - 80px);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+
+  &__img {
+    width: 250px;
+    transition: opacity .2s ease-in;
+    animation-name: fadein;
+    animation-duration: 2s;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

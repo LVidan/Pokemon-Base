@@ -1,0 +1,18 @@
+.footer {
+
+  &-social {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__link {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+  }
+
+  &-bottom {
+    padding: 0 10px;
+  }
+}
