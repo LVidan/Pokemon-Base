@@ -6,3 +6,4 @@ This project includes:
 - Manipulation of the DOM
 - Fetching the API from the PokeAPI website (free and open API)
 - Small effort on the UI / UX design of the application
+- Making the loader before we fetch the API (gif)
