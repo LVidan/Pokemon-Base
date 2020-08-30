@@ -29,7 +29,6 @@ const fetchPokemon = () => {
     }))
 
     displayPokemon(pokemon);
-    console.log(pokemon[0]);
   });      
 }
 
