@@ -20,14 +20,15 @@ const fetchPokemon = () => {
       height: data.height,
       id: data.id,
       exp: data.base_experience,
-      image: `https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`,
       type: data.types.map( type => type.type.name).join(' / '),
       abilities: data.abilities.map( ability => ability.ability.name).join(' / '),
       numberOfAbilities: data.abilities.length,
       spriteFront: data.sprites['front_default'],
-      spriteBack: data.sprites['back_default']
+      spriteBack: data.sprites['back_default'],
+      avatar: data.sprites.other.dream_world['front_default']
     }))
 
+    console.log(pokemon[0]);
     displayPokemon(pokemon);
   });      
 }
@@ -39,7 +40,7 @@ const displayPokemon = (pokemon) => {
     <div class="col-lg-4 col-md-6 col-xs-4 m-40">
       <div class="crd bg-light text-dark">
         <div class="crd__hdg">
-          <img src="${pokeman.image}" class="crd__img" alt="Image test" />
+          <img src="${pokeman.avatar}" class="crd__img" alt="Image test" />
         </div>
         <div class="crd__title">
           <h3 class="mb-0 fw-700">${pokeman.name}</h3>
