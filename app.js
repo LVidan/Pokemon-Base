@@ -1,9 +1,26 @@
 const pokeBase = document.querySelector('#pokemons');
+const pokeSearch = document.querySelector('#searchPoke');
+pokeSearch.setAttribute('disabled', '');
+
 pokeBase.innerHTML = `
   <div class="loader">
     <img src="./assets/pokeballAnimated.gif" alt="Loading Gif" class="img-fluid loader__img" />
   </div>
 `;
+
+pokeSearch.addEventListener("keyup", function (e) {
+  const userInput = e.target.value.toLowerCase();
+  const allPokemon = pokeBase.getElementsByTagName("h3");
+
+  Array.from(allPokemon).forEach((pokemon) => {
+    const pokemonContent = pokemon.textContent;
+    if (pokemonContent.toLowerCase().indexOf(userInput) != -1) {
+      pokemon.parentElement.parentElement.parentElement.style.display = "block";
+    } else {
+      pokemon.parentElement.parentElement.parentElement.style.display = "none";
+    }
+  });
+});
 
 const fetchPokemon = () => {
   const promises = [];
@@ -28,7 +45,6 @@ const fetchPokemon = () => {
       avatar: data.sprites.other.dream_world['front_default']
     }))
 
-    console.log(pokemon[0]);
     displayPokemon(pokemon);
   });      
 }
@@ -72,6 +88,7 @@ const displayPokemon = (pokemon) => {
   `).join('');
 
   pokeBase.innerHTML = pokemon_template;
+  pokeSearch.removeAttribute('disabled', '');
 };
 
 fetchPokemon();
