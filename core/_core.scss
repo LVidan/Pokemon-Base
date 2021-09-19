@@ -10,6 +10,14 @@
   font-size: 14px;
 }
 
+// disabled searchbard
+#searchPoke:disabled {
+  
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
 // Spacing
 .m-40 {
   margin: 40px 0;

@@ -200,6 +200,10 @@ body {
   font-size: 14px;
 }
 
+#searchPoke:disabled:hover {
+  cursor: not-allowed;
+}
+
 .m-40 {
   margin: 40px 0;
 }
